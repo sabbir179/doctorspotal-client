@@ -23,3 +23,6 @@
     transform: translateY(-130px);
 }
 
+.btn{
+    background-image: linear-gradient(75deg, #19D3AE,#0fcfec);
+}

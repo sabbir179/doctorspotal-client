@@ -14,7 +14,7 @@ const AddDoctor = () => {
         const newFile = e.target.files[0];
         setFile(newFile);
     }
-
+    
     const handleSubmit = () => {
         const formData = new FormData()
         console.log(info);

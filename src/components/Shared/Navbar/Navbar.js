@@ -14,21 +14,21 @@ const Navbar = () => {
                 
                     <NavLink to="/" activeStyle={{fontWeight: "bold", color: "black"}} class="nav-link mr-5" >Home <span class="sr-only">(current)</span></NavLink>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-5" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-5 " href="#">Dental Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-5 text-white" href="#">Reviews</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-5 text-white" href="#">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-5 text-white" href="#">Contact us</a>
-                </li>
+                <li className="nav-item">
+                        <NavLink className="nav-link mr-5" to="/login">Login</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link mr-5" to="/dashboard">Dashboard</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link mr-5 text-white" to="/dashboard">Admin</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link mr-5 text-white" to="#">Blogs</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link mr-5 text-white" to="#">Contact Us</NavLink>
+                    </li>
                 
                 
                 </ul>

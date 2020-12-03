@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import AppointmentDataTable from '../Dashboard/AppointmentDataTable/AppointmentDataTable';
-import Sidebar from '../Dashboard/Sidebar/Sidebar';
+import AppointmentDataTable from '../../Dashboard/AppointmentDataTable/AppointmentDataTable';
+import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 
 

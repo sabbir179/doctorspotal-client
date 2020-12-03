@@ -7,9 +7,11 @@ import { BrowserRouter as Router,
 import Home from './components/Home/Home/Home';
 import Appointment from './components/Appointment/Appointment/Appointment';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
-import AllPatients from './components/AllPatients/AllPatients';
 import Login from './components/Login/Login/Login';
-import AddDoctor from './components/AddDoctor/AddDoctor'
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import AllPatients from './components/AllPatients/AllPatients/AllPatients';
+import AddDoctor from './components/AddDoctor/AddDoctor';
+  
 
 
 
@@ -22,27 +24,27 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route  path="/appointment">
-              <Appointment></Appointment>
-            </Route>
-            <Route  path="/dashboard">
-              <Dashboard></Dashboard>
-            </Route>
-            <Route  path="/allpatients">
-              <AllPatients></AllPatients>
-            </Route>
-            <Route path="/addDoctor">
+          <Route path="/appointment">
+            <Appointment></Appointment>
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/allPatients">
+            <AllPatients></AllPatients>
+          </PrivateRoute>
+          <Route path="/addDoctor">
             <AddDoctor></AddDoctor>
           </Route>
-            <Route  path="/login">
-                <Login></Login>
-            </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
         </Switch>
       </Router>
-   </UserContext.Provider>
+    </UserContext.Provider>
   );
 }
 

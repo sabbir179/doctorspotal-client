@@ -10,6 +10,15 @@ const containerStyle = {
     border: '1px solid red'
 }
 
+const formatedDate=(d)=>{
+    var date = new Date(d);
+var newData = (((date.getMonth() > 8) ? 
+(date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear());
+    return newData
+
+}
+
+
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -18,12 +27,13 @@ const Dashboard = () => {
     const handleDateChange = date => {
         setSelectedDate(date);
     }
-
+    
+    
     useEffect( () => {
         fetch('http://localhost:5000/appointmentsByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
-            body: JSON.stringify({date: selectedDate, email: loggedInUser.email})
+            body: JSON.stringify({date: formatedDate(selectedDate), email: loggedInUser.email})
         })
         .then(res=>res.json())
         .then(data => setAppointments(data))
